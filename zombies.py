@@ -23,7 +23,7 @@ class Zombie:
             self.strength = strength
 
     def __str__(self):
-        return "This zombie has a speed of {}.".format(self.speed)
+        return "This zombie has a speed of {} and a strength of {}.".format(self.speed,self.strength)
 
     @classmethod
     def spawn(cls):
@@ -78,5 +78,11 @@ class Zombie:
         your_speed = random.randint(1, Zombie.max_speed)
         return your_speed > self.speed
 
-poor_bill = Zombie(7)
+    def fight(self):
+        """Represents you trying to fight a zombie.
+        """
+        your_strength = random.randint(1, Zombie.max_strength)
+        return your_strength > self.strength
+
+poor_bill = Zombie(7,3)
 print(poor_bill)
